@@ -44,7 +44,7 @@ if __name__ == '__main__':
             udalo_sie = juz_byl(list_of_numbers, num)
             if udalo_sie:
                 names = (fn, sn)
-                phone_book[names] = ['main', num]
+                phone_book[names].append['main', num]
                 dodatkowo()
 
     print(phone_book)
