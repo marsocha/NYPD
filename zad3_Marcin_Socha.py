@@ -9,25 +9,27 @@ def juz_byl(list_of, num):
         list_of.append(num)
         ret = 1
     else:
-        print('ehhhh, wpisz imie, chyba, ze juz nie chcesz, to napisz \'end\'')
+        print('ehhhh, serio?')
         ret = 0
         
     return ret
   
-def dodatkowo():
+def dodatkowo(list_of_numbers, names):
     dod = 'tak'
+    info = []
     while dod == 'tak':
         print('chcesz cos dodac? \n jak tak to napisz co \n jesli nie, to napisz \'nie\'')
         dod = str(input())
         if dod != 'nie':
             new_num = str(input())
-            juz_byl(list_of_numbers, new_num)
-            tmp = [dod, new_num]
-            phone_book[names].append(tmp)
-            dod = 'tak'
+            udalo_sie = juz_byl(list_of_numbers, new_num)
+            if udalo_sie:
+                tmp = [dod, new_num]
+                info.append(tmp)
+                dod = 'tak'
+            phone_book[names] = info
         else:
-            print('to teraz nastepna osoba')         
-
+            print('to teraz nastepna osoba')
 
 if __name__ == '__main__':
     
@@ -40,11 +42,7 @@ if __name__ == '__main__':
         if fn == "end": end = 1
         else:
             sn = str(input())
-            num = str(input())
-            udalo_sie = juz_byl(list_of_numbers, num)
-            if udalo_sie:
-                names = (fn, sn)
-                phone_book[names].append['main', num]
-                dodatkowo()
+            names = (fn, sn)
+            dodatkowo(list_of_numbers, names)
 
     print(phone_book)
