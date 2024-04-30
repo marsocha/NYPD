@@ -33,35 +33,24 @@ def search_tmp(path):
         else:
             search(os.path.join(path, folder))
 
-def search(path):
-    for day in week:
-        for when in pory:
-            path = os.path.join('./week/', day, when)
-            os.makedirs(path)
-            path_file = os.path.join(path, 'Solution.csv')
-            os.mknod(path_file)
-            with open(path_file, "r") as file:
-                f.readline()
-                if f.read(1) == 'A':
 
-
-
-    for folder in week:
-        if os.path.isfile(folder):
-            f = open(folder, "r")
+ret = 0
+for day in week:
+    for when in pory:
+        path = os.path.join('./week/', day, when)
+        path_file = os.path.join(path, 'Solution.csv')
+        with open(path_file, "r") as file:
             f.readline()
-            if (f.read(1)) == 'A':
+            if f.read(1) == 'A':
                 while (f.read(1) != ';'):
                     pass
                 while (f.read(1) != ';'):
                     pass
-                print(f.read(2))
-                print('aaa')
-        else:
-            search(os.path.join(path, folder))
-
-
-search('./week')
-
-
-
+                tmp = int(f.read(1))
+                sum_tmp = 0
+                while tmp != ';':
+                    sum_tmp *= 10
+                    sum_tmp += tmp
+                    tmp = int(f.read(1))
+                ret += sum_tmp
+print(ret)
