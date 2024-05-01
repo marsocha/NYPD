@@ -20,7 +20,7 @@ def initial():
                 file.write(first + '; ' +  second + '; ' + third)
 initial()
 
-def search_tmp(path, ret):
+def search_hard(path, ret):
     for folder in os.listdir(path):
         new_path = os.path.join(path, folder)
         if os.path.isfile(new_path):
@@ -46,7 +46,7 @@ def search_tmp(path, ret):
                 print(sum_tmp)
                 ret.append(sum_tmp)
         else:
-            search_tmp(new_path, ret)
+            search_hard(new_path, ret)
 
 retu = []
 path = os.path.join(os.getcwd(), 'week/')
