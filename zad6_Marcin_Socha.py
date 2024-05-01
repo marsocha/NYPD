@@ -50,7 +50,7 @@ def search_hard(path, ret):
 
 retu = []
 path = os.path.join(os.getcwd(), 'week/')
-search_tmp(path, retu)
+search_hard(path, retu)
 print(sum(retu))
 def search_easy():
     ret = 0
