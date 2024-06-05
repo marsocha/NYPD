@@ -46,6 +46,11 @@ l2 = l2[['Leader Name', 'Leader Surame', 'Name origin']]
 ### d)
 
 recreate_leaders = pd.merge(l1, l2, on=['Leader Name', 'Leader Surame'], how='left')
-
+'''
+uzywając join
+l1.set_index(['Leader Name', 'Leader Surame'], inplace=True)
+l2.set_index(['Leader Name', 'Leader Surame'], inplace=True)
+recreate_leaders = l1.join(l2, how='left')
+'''
 #print(recreate_leaders)
 #print(leaders)
